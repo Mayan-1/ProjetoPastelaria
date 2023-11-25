@@ -76,6 +76,31 @@ create table pedidos(
     foreign key (fk_bebidaTam) references bebidasTam(id_bebidasTam),
     foreign key (fk_cliente) references clientes(id_cliente)
 );
+insert into clientes(nome_completo,nome_cadastro,nascimento,telefone,email,bairro,cidade,estado)
+values("David Eduardo dos Santos Ferreira", "David",'2001-09-16',"75984846551","davidedsf09@gmail.com","centro","terra nova","Bahia"),
+("Maria Eduarda dos Santos Ferreira", "Eduarda",'2008-05-16',"75984545451","mariaedsf09@gmail.com","centro","terra nova","Bahia"),
+("Carlos Eduardo dos Santos Ferreira", "Carlos",'2007-09-16',"759844451","carlosedsf09@gmail.com","centro","terra nova","Bahia");
+
+ALTER TABLE tamanho drop column tamanho_grande;
+
+alter table tamanho 
+add column tamanho char (1);
+
+insert into tamanho (tamanho)
+values ("P"),
+("M"),
+("G");
+
+insert into pasteis (nome_pastel,categoria_pastel,fk_tamanho)
+values("Pastel de Flango","Flango",1);
+
+select * from pasteis; 
+
+
+
+
+
+
 
 
 
