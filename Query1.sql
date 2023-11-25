@@ -21,14 +21,22 @@ create table pasteis(
 	id_pastel int(11) not null auto_increment primary key,
     nome_pastel varchar(45) not null,
     categoria char(1) not null,
-    recheio varchar(45) not null,
-    id_tamanho int(11) not null
+    fk_tamanho int(11) not null,
+    foreign key (fk_tamanho) references tamanho(id_tamanho)
+);
+
+create table recheio(
+	id_recheio int(11) not null auto_increment primary key,
+    descricao varchar(45) not null,
+    fk_pastel int(11) not null,
+    foreign key (fk_pastel) references pasteis(id_pastel)	
 );
 
 create table bebidas(
 	id_bebida int(11) not null auto_increment primary key,
     nome_bebida varchar(45) not null,
-    id_tamanho int(11) not null
+    fk_tamanho int(11) not null,
+    foreign key (fk_tamanho) references tamanho(id_tamanho)
 );
 
 create table tamanho(
@@ -39,28 +47,37 @@ create table tamanho(
 );
 
 create table pasteisTam(
-	id_pasteiTam int(11) not null auto_increment primary key,
-    id_pastel int(11) not null,
-    id_tamanho int(11) not null,
-    valor_pastel float not null
+	id_pastelTam int(11) not null auto_increment primary key,
+    fk_pastel int(11) not null,
+    fk_tamanho int(11) not null,
+    valor_pastel float not null,
+	foreign key (fk_pastel) references pasteis(id_pastel),
+	foreign key (fk_tamanho) references tamanho(id_tamanho)
 );
 
 
 create table bebidasTam(
 	id_bebidasTam int(11) not null primary key	auto_increment,
-    id_bebida int(11) not null,
-    id_tamamho int(11) not null,
-    valor_bebida float not null
+    fk_bebida int(11) not null,
+    fk_tamanho int(11) not null,
+    valor_bebida float not null,
+    foreign key (fk_tamanho) references tamanho(id_tamanho),
+    foreign key (fk_bebida) references bebidas(id_bebida)
 );
 
 
 create table pedidos(
 	id_pedido int(11) not null auto_increment primary key,
-    id_pastelTam int(11),
-    id_bebidaTam int(11),
-    id_cliente int(11) not null,
-    valor_total float not null
+    fk_pastelTam int(11),
+    fk_bebidaTam int(11),
+    fk_cliente int(11) not null,
+    valor_total float not null,
+    foreign key (fk_pastelTam) references pasteisTam(id_pastelTam),
+    foreign key (fk_bebidaTam) references bebidasTam(id_bebidasTam),
+    foreign key (fk_cliente) references clientes(id_cliente)
 );
+
+
 
 
 
