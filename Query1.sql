@@ -82,6 +82,8 @@ values("David Eduardo dos Santos Ferreira", "David",'2001-09-16',"75984846551","
 ("Carlos Eduardo dos Santos Ferreira", "Carlos",'2007-09-16',"759844451","carlosedsf09@gmail.com","centro","terra nova","Bahia");
 
 ALTER TABLE tamanho drop column tamanho_grande;
+ALTER TABLE tamanho drop column tamanho_pequeno;
+ALTER TABLE tamanho drop column tamanho_medio;
 
 alter table tamanho 
 add column tamanho char (1);
@@ -91,10 +93,19 @@ values ("P"),
 ("M"),
 ("G");
 
-insert into pasteis (nome_pastel,categoria_pastel,fk_tamanho)
-values("Pastel de Flango","Flango",1);
+insert into pasteis (nome_pastel, categoria, fk_tamanho)
+values("Pastel de Flango","Flango", 1);
+
+
+delete from pasteis where categoria = 'F';
+
+alter table pasteis change column categoria categorias varchar(45);
+
+insert into pasteis (nome_pastel, categorias, fk_tamanho)
+values("Pastel de Flango","Flango", 1);
 
 select * from pasteis; 
+select * from tamanho;
 
 
 
