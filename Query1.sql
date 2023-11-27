@@ -271,4 +271,4 @@ insert into pedidos(fk_pastelTam, fk_bebidaTam, fk_cliente, valor_total)
 values
 (1, 2, 5, 10.00);
  
-
+select * from clientes;
