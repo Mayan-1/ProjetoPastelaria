@@ -94,3 +94,6 @@ create table itens_pedido(
     foreign key (fk_pastelTam) references pasteis_tamanho(id_pastelTam),
     foreign key (fk_bebidaTam) references bebidas_tamanho(id_bebidasTam)
 );
+
+alter table pasteis drop foreign key pasteis_ibfk_1;
+alter table pasteis drop column fk_tamanho;
