@@ -12,3 +12,63 @@ values("David Eduardo dos Santos Ferreira", "David",'2001-09-16',"75984846551","
 ("jorge bahia", "jorge","1995-02-15","75985647125","jorgebahia@gmail.com","Brokylin","Feira de Santana","Bahia"),
 ("tayana teles", "tay","1997-05-08","75986324578","tay10@gmail.com","feira 1","Feira de santana","Bahia"),
 ("roberval santos", "roberval","1990-05-05","75981111121","taliscasouza@gmail.com","centro","Feira de Santana","Bahia");
+
+
+insert into tamanho (tamanho)
+values ("P"),
+("M"),
+("G");
+
+
+select * from pasteis;
+    
+insert into pasteis(nome_pastel)
+values
+("Pastel de Flango"),
+("Pastel Chines"),
+("Pastel de Carne"),
+("Pastel de Queijo e Presunto"),
+("Pastel de Camarao");
+
+insert into pasteis(nome_pastel, categoria)
+values
+("Pastel de Palmito", "Vegano"),
+("Pastel de abobrinha", "Vegano"),
+("Pastel de brocólis", "Vegano"),
+("Pastel de queijo s/lactose", "Sem Lacoste"),
+("Pastel de Queijo", "Vegetariano");
+
+select * from pasteis;
+
+insert into recheio(descricao)
+values
+("Flango"),
+("Brocolis"),
+("Abobrinha"),
+("Queijo"),
+("Presunto"),
+("Carne"),
+("Camarão");
+
+insert into recheio(descricao)
+values
+("Queijo s/Lactose"),
+("Palmito");
+
+
+select * from pasteis;
+select * from recheio;
+
+insert into pasteis_recheio(fk_pastel, fk_recheio)
+values
+(1, 1),
+(2, 6),
+(3, 6),
+(4, 4),
+(4, 5),
+(5, 7),
+(6, 9),
+(7, 3),
+(8, 2),
+(9, 8),
+(10, 4);
