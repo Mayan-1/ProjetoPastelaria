@@ -97,3 +97,7 @@ create table itens_pedido(
 
 alter table pasteis drop foreign key pasteis_ibfk_1;
 alter table pasteis drop column fk_tamanho;
+
+alter table bebidas drop foreign key bebidas_ibfk_1;
+alter table bebidas drop column fk_tamanho;
+alter table pedidos drop column valor_total;
