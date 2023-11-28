@@ -141,5 +141,7 @@ values
 (6, 2, 4.00),
 (6, 3, 6.00);
 
+select * from bebidas_tamanho;
+
 
 
